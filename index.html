@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragón Creativo - Libros Infantiles para Superar Miedos</title>
-    <meta name="description" content="Libros infantiles diseñados para ayudar a niños de 3-7 años a superar miedos y dificultades emocionales. Historias mágicas y reconfortantes.">
+    <title>Dragón Creativo - Libros Infantiles Premium</title>
+    <meta name="description" content="Libros infantiles de lujo diseñados para ayudar a niños de 3-7 años a superar miedos. Historias mágicas, ilustraciones premium y contenido emocional profundo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,20 +15,24 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Header con animación */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #fafbfc;
+            overflow-x: hidden;
+        }
+
+        /* Header Premium */
         header {
-            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            background: linear-gradient(135deg, #001a4d 0%, #0066cc 50%, #00a8ff 100%);
             color: white;
-            padding: 50px 20px;
+            padding: 80px 20px 100px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
         }
@@ -33,349 +40,442 @@
         header::before {
             content: "";
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
         }
 
         header h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
             position: relative;
             z-index: 1;
+            letter-spacing: 1px;
         }
 
-        header p {
-            font-size: 1.2em;
-            opacity: 0.95;
-            max-width: 600px;
+        header .tagline {
+            font-size: 1.3em;
+            opacity: 0.98;
+            max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-top: 12px;
             position: relative;
             z-index: 1;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Sección de introducción */
+        /* Sección Intro Premium */
         .intro {
             background: white;
-            padding: 50px 40px;
-            border-radius: 15px;
-            margin: 40px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 70px 50px;
+            border-radius: 20px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(0,102,204,0.08);
             text-align: center;
-            border-left: 5px solid #0066cc;
+            border: 1px solid rgba(0,102,204,0.1);
+            position: relative;
+        }
+
+        .intro::before {
+            content: "✨";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
         }
 
         .intro h2 {
-            color: #0066cc;
-            margin-bottom: 15px;
-            font-size: 2em;
+            font-family: 'Playfair Display', serif;
+            color: #001a4d;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            letter-spacing: 0.5px;
         }
 
         .intro p {
             font-size: 1.1em;
             color: #555;
-            line-height: 1.8;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* Sección de libros */
+        /* Sección de libros Premium */
         .books-section {
-            margin: 50px 0;
+            margin: 80px 0;
         }
 
-        .books-section h2 {
-            color: #0066cc;
+        .section-header {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2em;
-            position: relative;
-            padding-bottom: 20px;
+            margin-bottom: 70px;
         }
 
-        .books-section h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: #001a4d;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-divider {
+            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #0066cc, #00a8ff);
+            background: linear-gradient(90deg, transparent, #0066cc, transparent);
+            margin: 0 auto;
             border-radius: 2px;
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 45px;
+            margin-bottom: 60px;
         }
 
         .book-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
+            border: 1px solid rgba(0,102,204,0.05);
+            position: relative;
+        }
+
+        .book-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .book-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 35px rgba(0,102,204,0.25);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,102,204,0.2);
+        }
+
+        .book-card:hover::before {
+            opacity: 1;
         }
 
         .book-cover {
             width: 100%;
-            height: 320px;
+            height: 380px;
             object-fit: cover;
             background: linear-gradient(135deg, #e0eef9 0%, #cce5f7 100%);
-            transition: transform 0.4s ease;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .book-card:hover .book-cover {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .book-info {
-            padding: 28px;
+            padding: 35px;
+            position: relative;
+            z-index: 2;
         }
 
         .book-info h3 {
-            color: #0066cc;
-            margin-bottom: 12px;
-            font-size: 1.4em;
+            font-family: 'Playfair Display', serif;
+            color: #001a4d;
+            margin-bottom: 15px;
+            font-size: 1.5em;
             line-height: 1.4;
+            letter-spacing: 0.3px;
         }
 
         .book-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .book-age {
             display: inline-block;
             background: linear-gradient(135deg, #e0eef9 0%, #d4e8f7 100%);
             color: #0066cc;
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 8px 18px;
+            border-radius: 25px;
             font-size: 0.9em;
-            font-weight: bold;
-        }
-
-        .book-icon {
-            font-size: 1.5em;
+            font-weight: 600;
+            border: 1px solid rgba(0,102,204,0.2);
         }
 
         .book-description {
             color: #666;
-            font-size: 0.98em;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 300;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 28px;
-            border-radius: 8px;
+            padding: 15px 32px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
-            transition: all 0.3s ease;
-            border: none;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
             cursor: pointer;
             font-size: 1em;
             width: 100%;
+            letter-spacing: 0.5px;
         }
 
         .btn-amazon {
             background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
             color: white;
-            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+            box-shadow: 0 6px 20px rgba(0,102,204,0.3);
         }
 
         .btn-amazon:hover {
             background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-            box-shadow: 0 6px 20px rgba(0,102,204,0.4);
-            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,102,204,0.5);
+            transform: translateY(-3px);
         }
 
-        /* Sección por qué elegir */
+        /* Sección Premium Features */
         .why-section {
-            background: linear-gradient(135deg, #e0eef9 0%, #cce5f7 100%);
-            padding: 60px 40px;
-            border-radius: 15px;
-            margin: 60px 0;
+            background: linear-gradient(135deg, #001a4d 0%, #0066cc 100%);
+            padding: 80px 50px;
+            border-radius: 25px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
         }
 
         .why-section h2 {
-            color: #0066cc;
+            font-family: 'Playfair Display', serif;
+            color: white;
             text-align: center;
-            margin-bottom: 45px;
-            font-size: 2.2em;
+            margin-bottom: 50px;
+            font-size: 2.8em;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
         }
 
         .feature {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            border-radius: 18px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,102,204,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            background: white;
         }
 
         .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         .feature h3 {
-            color: #0066cc;
-            margin-bottom: 12px;
-            font-size: 1.2em;
+            font-family: 'Playfair Display', serif;
+            color: #001a4d;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            letter-spacing: 0.3px;
         }
 
         .feature p {
             color: #666;
-            font-size: 0.98em;
-            line-height: 1.6;
+            font-size: 1em;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* Sección CTA */
+        /* Sección CTA Premium */
         .cta-section {
-            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            background: linear-gradient(135deg, #001a4d 0%, #0066cc 50%, #00a8ff 100%);
             color: white;
-            padding: 50px 40px;
-            border-radius: 15px;
+            padding: 80px 50px;
+            border-radius: 25px;
             text-align: center;
-            margin: 50px 0;
-            box-shadow: 0 8px 25px rgba(0,102,204,0.3);
+            margin: 80px 0;
+            box-shadow: 0 15px 50px rgba(0,102,204,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-section h2 {
-            font-size: 2em;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
             margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
         .cta-section p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            opacity: 0.98;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
         }
 
         .btn-cta {
             background: white;
             color: #0066cc;
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 18px 50px;
+            border-radius: 12px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.3s ease;
-            font-size: 1.05em;
+            transition: all 0.4s ease;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .btn-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: #f0f8ff;
         }
 
-        /* Footer */
+        /* Footer Premium */
         footer {
-            background: #0052a3;
+            background: linear-gradient(135deg, #001a4d 0%, #0052a3 100%);
             color: white;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
+            padding: 50px 20px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         footer p {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        footer strong {
+            font-weight: 600;
         }
 
         .social-links {
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .social-links a {
             color: white;
-            margin: 0 15px;
+            margin: 0 18px;
             text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .social-links a:hover {
             opacity: 0.8;
+            transform: translateY(-2px);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .books-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .intro {
-                padding: 30px 20px;
-            }
-
-            .why-section {
-                padding: 40px 20px;
-            }
-
-            .cta-section {
-                padding: 35px 20px;
-            }
-
-            .book-cover {
-                height: 250px;
-            }
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 20px auto;
         }
 
-        /* Animación suave de entrada */
+        /* Animaciones */
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -383,29 +483,106 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .book-card {
-            animation: slideUp 0.6s ease-out;
+            animation: slideUp 0.7s ease-out;
         }
 
         .feature {
-            animation: slideUp 0.6s ease-out;
+            animation: slideUp 0.7s ease-out;
+        }
+
+        header {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Responsive Premium */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header .tagline {
+                font-size: 1.1em;
+            }
+
+            .intro {
+                padding: 40px 25px;
+            }
+
+            .intro h2 {
+                font-size: 2em;
+            }
+
+            .section-header h2 {
+                font-size: 2.2em;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .book-cover {
+                height: 300px;
+            }
+
+            .why-section {
+                padding: 50px 25px;
+            }
+
+            .why-section h2 {
+                font-size: 2.2em;
+            }
+
+            .cta-section {
+                padding: 50px 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 2em;
+            }
+
+            .feature {
+                padding: 30px;
+            }
+        }
+
+        /* Efecto glassmorphism opcional */
+        .glass {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
     </style>
 </head>
 <body>
     <header>
         <h1>🐉 Dragón Creativo</h1>
-        <p>Libros infantiles que ayudan a los niños a superar miedos y crecer felices</p>
+        <p class="tagline">Libros Infantiles Premium para el Desarrollo Emocional</p>
+        <p class="subtitle">Historias mágicas que transforman miedos en fortaleza</p>
     </header>
 
     <div class="container">
         <div class="intro">
-            <h2>Bienvenido a Dragón Creativo</h2>
-            <p>Nuestros libros están diseñados especialmente para niños de 3 a 7 años. Cada historia es una aventura mágica que ayuda a los pequeños a entender y superar los miedos cotidianos de manera amena, divertida y educativa. Porque cada niño merece crecer sin miedo y lleno de confianza.</p>
+            <h2>Bienvenido a una Nueva Era de Educación Emocional</h2>
+            <p>En Dragón Creativo creamos historias extraordinarias diseñadas científicamente para niños de 3 a 7 años. Cada libro es una joya narrativa que acompaña a los pequeños en su viaje personal hacia la valentía, la confianza y la emocional inteligencia. Nuestras ilustraciones premium y textos cuidadosamente elaborados transforman miedos cotidianos en oportunidades de crecimiento.</p>
         </div>
 
         <div class="books-section">
-            <h2>📚 Nuestros Libros Destacados</h2>
+            <div class="section-header">
+                <h2>✨ Colección Destacada</h2>
+                <div class="section-divider"></div>
+            </div>
+            
             <div class="books-grid">
                 <!-- Libro 1 -->
                 <div class="book-card">
@@ -415,8 +592,8 @@
                         <div class="book-meta">
                             <span class="book-age">👶 3-7 años</span>
                         </div>
-                        <p class="book-description">Un cuento infantil para superar la ansiedad por separación y el primer día de colegio. Una historia tierna que enseña que es normal tener miedo, pero que podemos ser valientes.</p>
-                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
+                        <p class="book-description">Una emotiva historia sobre la ansiedad por separación y el primer día de colegio. Acompaña a tu pequeño en la transición con una narrativa que valida emociones y fortalece la confianza.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Descubrir en Amazon 📖</a>
                     </div>
                 </div>
 
@@ -428,8 +605,8 @@
                         <div class="book-meta">
                             <span class="book-age">👶 3-6 años</span>
                         </div>
-                        <p class="book-description">Cuento ilustrado para superar el miedo a las tormentas y los ruidos fuertes. Con mensajes reconfortantes que enseñan a los niños que pueden ser más fuertes de lo que creen.</p>
-                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
+                        <p class="book-description">Una aventura inspiradora que ayuda a los niños a superar el miedo a las tormentas y ruidos fuertes. Ilustraciones cautivadoras y mensajes de empoderamiento que revelan la fortaleza interior.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Descubrir en Amazon 📖</a>
                     </div>
                 </div>
 
@@ -441,50 +618,53 @@
                         <div class="book-meta">
                             <span class="book-age">👶 3-6 años</span>
                         </div>
-                        <p class="book-description">Cuento ilustrado para dormir y vencer los miedos nocturnos. Una historia mágica que tranquiliza a los niños y los ayuda a entender que la noche puede ser hermosa y segura.</p>
-                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
+                        <p class="book-description">Un cuento mágico para transformar la noche en un lugar seguro y hermoso. Perfecto para la hora de dormir, ayuda a los pequeños a vencer miedos nocturnos con ternura y esperanza.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Descubrir en Amazon 📖</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="why-section">
-            <h2>💙 ¿Por qué elegir Dragón Creativo?</h2>
+            <h2>💎 Lo que Nos Diferencia</h2>
             <div class="features">
                 <div class="feature">
-                    <div class="feature-icon">📖</div>
-                    <h3>Historias Educativas</h3>
-                    <p>Cada libro aborda miedos reales con narrativas amenas y reconfortantes que enseñan valiosas lecciones emocionales.</p>
+                    <div class="feature-icon">📚</div>
+                    <h3>Narrativa Cuidada</h3>
+                    <p>Cada palabra elegida estratégicamente para validar emociones y fortalecer la autoestima emocional de los niños.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🎨</div>
-                    <h3>Ilustraciones Hermosas</h3>
-                    <p>Ilustraciones coloridas y cautivadoras que capturan la imaginación de los pequeños lectores.</p>
+                    <h3>Ilustraciones Premium</h3>
+                    <p>Obras de arte visual que hipnotizan la imaginación. Cada página es una galería de belleza y calidez.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Para Familias</h3>
-                    <p>Perfectos para leer en familia. Un momento especial para conectar y ayudar a los niños a crecer.</p>
+                    <div class="feature-icon">🧠</div>
+                    <h3>Desarrollo Integral</h3>
+                    <p>Basados en principios de psicología infantil y educación emocional para un crecimiento holístico.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">💡</div>
-                    <h3>Desarrollo Emocional</h3>
-                    <p>Ayudan a desarrollar inteligencia emocional desde temprana edad. Herramientas para la vida.</p>
+                    <div class="feature-icon">❤️</div>
+                    <h3>Compasión y Esperanza</h3>
+                    <p>Cada historia transmite que es normal tener miedo, pero todos tenemos la valentía para superarlo.</p>
                 </div>
             </div>
         </div>
 
         <div class="cta-section">
-            <h2>¡Descubre Todos Nuestros Libros!</h2>
-            <p>Visita nuestra tienda en Amazon y encuentra la historia perfecta para tu pequeño</p>
-            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn-cta">📚 Ver Todos los Libros en Amazon</a>
+            <div class="cta-content">
+                <h2>Abre las Puertas a la Aventura Emocional</h2>
+                <p>Descubre nuestra colección completa de libros premium diseñados para transformar el mundo emocional de tu pequeño</p>
+                <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn-cta">Explorar Todos los Libros 📚</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p><strong>Dragón Creativo © 2024</strong></p>
-        <p>Libros infantiles para crecer sin miedos</p>
-        <p style="font-size: 0.95em; margin-top: 15px; opacity: 0.9;">Ayudando a niños y niñas a superar miedos y desarrollar confianza en sí mismos</p>
+        <strong>Dragón Creativo © 2024</strong>
+        <div class="footer-divider"></div>
+        <p>Libros Infantiles Premium para el Desarrollo Emocional</p>
+        <p style="font-size: 0.95em; margin-top: 12px; opacity: 0.9;">Transformando miedos en fortaleza, inseguridades en confianza</p>
         <div class="social-links">
             <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7">📚 Amazon Store</a>
         </div>
