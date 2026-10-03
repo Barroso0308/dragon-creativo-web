@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragón Creativo - Libros Infantiles</title>
+    <title>Dragón Creativo - Libros Infantiles para Superar Miedos</title>
+    <meta name="description" content="Libros infantiles diseñados para ayudar a niños de 3-7 años a superar miedos y dificultades emocionales. Historias mágicas y reconfortantes.">
     <style>
         * {
             margin: 0;
@@ -18,18 +19,40 @@
             background-color: #f8f9fa;
         }
 
+        /* Header con animación */
         header {
             background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
         }
 
         header p {
@@ -37,6 +60,8 @@
             opacity: 0.95;
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .container {
@@ -45,19 +70,21 @@
             padding: 20px;
         }
 
+        /* Sección de introducción */
         .intro {
             background: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 30px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 50px 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
+            border-left: 5px solid #0066cc;
         }
 
         .intro h2 {
             color: #0066cc;
             margin-bottom: 15px;
-            font-size: 1.8em;
+            font-size: 2em;
         }
 
         .intro p {
@@ -66,215 +93,330 @@
             line-height: 1.8;
         }
 
+        /* Sección de libros */
         .books-section {
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .books-section h2 {
             color: #0066cc;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2em;
+            margin-bottom: 50px;
+            font-size: 2.2em;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .books-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #0066cc, #00a8ff);
+            border-radius: 2px;
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
         }
 
         .book-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
         }
 
         .book-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,102,204,0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,102,204,0.25);
         }
 
         .book-cover {
             width: 100%;
-            height: 300px;
+            height: 320px;
             object-fit: cover;
             background: linear-gradient(135deg, #e0eef9 0%, #cce5f7 100%);
+            transition: transform 0.4s ease;
+        }
+
+        .book-card:hover .book-cover {
+            transform: scale(1.05);
         }
 
         .book-info {
-            padding: 20px;
+            padding: 28px;
         }
 
         .book-info h3 {
             color: #0066cc;
-            margin-bottom: 10px;
-            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+            line-height: 1.4;
+        }
+
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .book-age {
             display: inline-block;
-            background: #e0eef9;
+            background: linear-gradient(135deg, #e0eef9 0%, #d4e8f7 100%);
             color: #0066cc;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.9em;
-            margin-bottom: 10px;
             font-weight: bold;
+        }
+
+        .book-icon {
+            font-size: 1.5em;
         }
 
         .book-description {
             color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .book-buttons {
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
+            font-size: 0.98em;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 20px;
-            border-radius: 5px;
+            padding: 13px 28px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.95em;
+            font-size: 1em;
+            width: 100%;
         }
 
         .btn-amazon {
-            background: #0066cc;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
             color: white;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
         }
 
         .btn-amazon:hover {
-            background: #0052a3;
-            box-shadow: 0 4px 8px rgba(0,102,204,0.3);
+            background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+            box-shadow: 0 6px 20px rgba(0,102,204,0.4);
+            transform: translateY(-2px);
         }
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #1ea853;
-            box-shadow: 0 4px 8px rgba(37,211,102,0.3);
-        }
-
+        /* Sección por qué elegir */
         .why-section {
             background: linear-gradient(135deg, #e0eef9 0%, #cce5f7 100%);
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin: 60px 0;
         }
 
         .why-section h2 {
             color: #0066cc;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8em;
+            margin-bottom: 45px;
+            font-size: 2.2em;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
         }
 
         .feature {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
         }
 
         .feature h3 {
             color: #0066cc;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.2em;
         }
 
         .feature p {
             color: #666;
-            font-size: 0.95em;
+            font-size: 0.98em;
+            line-height: 1.6;
         }
 
+        /* Sección CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 8px 25px rgba(0,102,204,0.3);
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #0066cc;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+        }
+
+        /* Footer */
         footer {
-            background: #0066cc;
+            background: #0052a3;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 50px;
         }
 
         footer p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .social-links {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .social-links a {
             color: white;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            transition: opacity 0.3s ease;
         }
 
         .social-links a:hover {
             opacity: 0.8;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
             }
 
             .books-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
             .intro {
-                padding: 20px;
+                padding: 30px 20px;
             }
+
+            .why-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section {
+                padding: 35px 20px;
+            }
+
+            .book-cover {
+                height: 250px;
+            }
+        }
+
+        /* Animación suave de entrada */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .book-card {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .feature {
+            animation: slideUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>🐉 Dragón Creativo</h1>
-        <p>Libros infantiles para ayudar a los niños a superar miedos y dificultades</p>
+        <p>Libros infantiles que ayudan a los niños a superar miedos y crecer felices</p>
     </header>
 
     <div class="container">
         <div class="intro">
             <h2>Bienvenido a Dragón Creativo</h2>
-            <p>Nuestros libros están diseñados especialmente para niños de 3 a 7 años. Cada historia ayuda a los pequeños a entender y superar los miedos cotidianos de una manera amena, divertida y educativa. Porque cada niño merece crecer sin miedo.</p>
+            <p>Nuestros libros están diseñados especialmente para niños de 3 a 7 años. Cada historia es una aventura mágica que ayuda a los pequeños a entender y superar los miedos cotidianos de manera amena, divertida y educativa. Porque cada niño merece crecer sin miedo y lleno de confianza.</p>
         </div>
 
         <div class="books-section">
-            <h2>Nuestros Libros Destacados</h2>
+            <h2>📚 Nuestros Libros Destacados</h2>
             <div class="books-grid">
                 <!-- Libro 1 -->
                 <div class="book-card">
-                    <img src="https://m.media-amazon.com/images/P/B0H9DGT15G.jpg" alt="El canguero que no quería salir de la bolsa" class="book-cover">
+                    <img src="https://m.media-amazon.com/images/P/B0H9DGT15G.jpg" alt="El canguro que no quería salir de la bolsa" class="book-cover">
                     <div class="book-info">
                         <h3>El Canguro que No Quería Salir de la Bolsa</h3>
-                        <span class="book-age">3-7 años</span>
-                        <p class="book-description">Un cuento infantil para superar la ansiedad por separación y el primer día de colegio. Una historia tierna que ayuda a los niños a entender que es normal tener miedo, pero que pueden ser valientes.</p>
-                        <div class="book-buttons">
-                            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=f1a1f9cb-373c-455a-932a-8bca8445e2fe" class="btn btn-amazon">Ver en Amazon</a>
+                        <div class="book-meta">
+                            <span class="book-age">👶 3-7 años</span>
                         </div>
+                        <p class="book-description">Un cuento infantil para superar la ansiedad por separación y el primer día de colegio. Una historia tierna que enseña que es normal tener miedo, pero que podemos ser valientes.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
                     </div>
                 </div>
 
@@ -283,11 +425,11 @@
                     <img src="https://m.media-amazon.com/images/P/B0H94Z4XHV.jpg" alt="El Conejito que Asustó a la Tormenta" class="book-cover">
                     <div class="book-info">
                         <h3>El Conejito que Asustó a la Tormenta</h3>
-                        <span class="book-age">3-6 años</span>
-                        <p class="book-description">Cuento ilustrado para superar el miedo a las tormentas y los ruidos fuertes. Con mensajes reconfortantes que enseñan a los niños que pueden ser más fuertes de lo que creen.</p>
-                        <div class="book-buttons">
-                            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=f1a1f9cb-373c-455a-932a-8bca8445e2fe" class="btn btn-amazon">Ver en Amazon</a>
+                        <div class="book-meta">
+                            <span class="book-age">👶 3-6 años</span>
                         </div>
+                        <p class="book-description">Cuento ilustrado para superar el miedo a las tormentas y los ruidos fuertes. Con mensajes reconfortantes que enseñan a los niños que pueden ser más fuertes de lo que creen.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
                     </div>
                 </div>
 
@@ -296,44 +438,55 @@
                     <img src="https://m.media-amazon.com/images/P/B0GHZRR8FZ.jpg" alt="El Pequeño Búho que Tenía Miedo a la Noche" class="book-cover">
                     <div class="book-info">
                         <h3>El Pequeño Búho que Tenía Miedo a la Noche</h3>
-                        <span class="book-age">3-6 años</span>
-                        <p class="book-description">Cuento ilustrado para dormir y vencer los miedos nocturnos. Una historia mágica que tranquiliza a los niños y los ayuda a entender que la noche puede ser hermosa y segura.</p>
-                        <div class="book-buttons">
-                            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=f1a1f9cb-373c-455a-932a-8bca8445e2fe" class="btn btn-amazon">Ver en Amazon</a>
+                        <div class="book-meta">
+                            <span class="book-age">👶 3-6 años</span>
                         </div>
+                        <p class="book-description">Cuento ilustrado para dormir y vencer los miedos nocturnos. Una historia mágica que tranquiliza a los niños y los ayuda a entender que la noche puede ser hermosa y segura.</p>
+                        <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn btn-amazon">Ver en Amazon 📖</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="why-section">
-            <h2>¿Por qué elegir Dragón Creativo?</h2>
+            <h2>💙 ¿Por qué elegir Dragón Creativo?</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>📖 Historias Educativas</h3>
-                    <p>Cada libro aborda miedos reales con historias amenas y reconfortantes.</p>
+                    <div class="feature-icon">📖</div>
+                    <h3>Historias Educativas</h3>
+                    <p>Cada libro aborda miedos reales con narrativas amenas y reconfortantes que enseñan valiosas lecciones emocionales.</p>
                 </div>
                 <div class="feature">
-                    <h3>🎨 Ilustraciones Hermosas</h3>
-                    <p>Ilustraciones coloridas y atractivas que capturan la imaginación de los pequeños.</p>
+                    <div class="feature-icon">🎨</div>
+                    <h3>Ilustraciones Hermosas</h3>
+                    <p>Ilustraciones coloridas y cautivadoras que capturan la imaginación de los pequeños lectores.</p>
                 </div>
                 <div class="feature">
-                    <h3>👨‍👩‍👧 Para Familias</h3>
-                    <p>Perfectos para leer en familia y ayudar a los niños a crecer sin miedos.</p>
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Para Familias</h3>
+                    <p>Perfectos para leer en familia. Un momento especial para conectar y ayudar a los niños a crecer.</p>
                 </div>
                 <div class="feature">
-                    <h3>💙 Desarrollo Emocional</h3>
-                    <p>Ayudan a desarrollar inteligencia emocional desde temprana edad.</p>
+                    <div class="feature-icon">💡</div>
+                    <h3>Desarrollo Emocional</h3>
+                    <p>Ayudan a desarrollar inteligencia emocional desde temprana edad. Herramientas para la vida.</p>
                 </div>
             </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>¡Descubre Todos Nuestros Libros!</h2>
+            <p>Visita nuestra tienda en Amazon y encuentra la historia perfecta para tu pequeño</p>
+            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7" class="btn-cta">📚 Ver Todos los Libros en Amazon</a>
         </div>
     </div>
 
     <footer>
         <p><strong>Dragón Creativo © 2024</strong></p>
         <p>Libros infantiles para crecer sin miedos</p>
+        <p style="font-size: 0.95em; margin-top: 15px; opacity: 0.9;">Ayudando a niños y niñas a superar miedos y desarrollar confianza en sí mismos</p>
         <div class="social-links">
-            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=f1a1f9cb-373c-455a-932a-8bca8445e2fe">📚 Amazon</a>
+            <a href="https://www.amazon.com/stores/Drag%C3%B3n-Creativo/author/B0GLMYBY59/allbooks?ccs_id=bf38a34c-718b-48d1-8cf6-4e99415c90c7">📚 Amazon Store</a>
         </div>
     </footer>
 </body>
